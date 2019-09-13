@@ -1,0 +1,61 @@
+
+<div class="track-container">
+
+  <div class="error-case" *ngIf="foundShipmentID === false">
+    <i class="fab fa-earlybirds"></i>
+    <p>No Shipment Found!</p>
+  </div>
+
+  <div class="success-case" *ngIf="foundShipmentID === true">
+    <div class="success-header">
+      <div>
+        <i class="fas fa-ship"></i>
+        <span>{{shipmentData.name}}</span>
+      </div>
+      <div>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-handshake"></i>
+      </div>
+    </div>
+
+    <div class="success-body">
+
+      <div class="status-wrapper">
+
+        <div class="status-item">
+          <div class="status-top">
+            status
+          </div>
+          <div class="status-connector">
+            <div class="status-dash"></div>
+            <div class="status-dot"></div>
+            <div class="status-dash"></div>
+          </div>
+          <div class="status-bottom">
+            <div class="static-part">static</div>
+            <div class="toggle-part">toggle</div>
+          </div>
+          <div class="status-dot"></div>
+        </div>
+
+        <div class="status-item">
+          <div class="status-top">
+            status
+          </div>
+          <div class="status-connector">
+            <div class="status-dash"></div>
+            <div class="status-dot"></div>
+            <div class="status-dash"></div>
+          </div>
+          <div class="status-bottom">
+            <div class="static-part">static</div>
+            <div class="toggle-part">toggle</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

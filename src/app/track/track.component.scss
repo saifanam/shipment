@@ -1,0 +1,99 @@
+@import "../../variables.scss";
+
+.track-container {
+    margin: 4em 2em;
+
+    .error-case {
+        text-align: center;
+        i {
+            font-size: 2em;
+        }
+    }
+
+    .success-case {
+
+        .success-header {
+            display: flex;
+            justify-content: space-between;
+            background-color: $lightGray;
+            padding: 1em;
+
+            div {
+                display: flex;
+                align-items: center;
+    
+                span {
+                    font-size: 1.4em;
+                }
+            }
+    
+            .fa-ship {
+                margin-right: 10px;
+            }
+    
+            .fa-handshake {
+                margin-left: 20px;
+            }
+    
+            .fa-wifi, .fa-handshake {
+                cursor: pointer;
+                color: $blue;
+            }
+    
+            i {
+                font-size: 2em;
+            }
+        }
+
+        .success-body {
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+            box-shadow: 0px 8px 12px $borderGray, -10px -1px 22px $borderGray, 5px -1px 7px $borderGray;
+
+            .status-wrapper {
+                display: flex;
+                overflow-x: auto;
+
+                .status-item {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    margin-top: 1em;
+
+                    .status-bottom {
+                        &:hover {
+                            .toggle-part {
+                                display: block;
+                            }
+                        }
+
+                        .toggle-part {
+                            display: none;
+                        }
+                    }
+                }
+
+                .status-connector {
+                    display: flex;
+                    align-items: center;
+
+                    .status-dot {
+                        width: 10px;
+                        height: 20px;
+                        background-color: $blue;
+                        margin: 5px 0;
+                        border-radius: 20px;
+                    }
+
+                    .status-dash {
+                        margin: 5px 0;
+                        width: 30px;
+                        height: 10px;
+                        background-color: $blue;
+                    }
+                }                
+            }
+        }
+    }
+}
