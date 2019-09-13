@@ -14,6 +14,18 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
+## Highlights
+
+1. shared folder contains utility functions and dummy.json. The dummy json can be replaced / extended with a service in the prod version.
+
+2. A separate variables.scss for colors and fonts.
+
+3. The timeline is set to `overflow-x: auto` so it automatically scrolls in the horizontal direction. Works in mobile resolutions as well. Test by resizing browser.
+
+4. The timeline automatically adjusts to the number to status updates. Test by adding / removing entries from the `sea_movements` object in the json.
+
+5. Clicking on `Track Shipment` in the header takes to the tracking page. The route is configured to accept the tracking ID.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).

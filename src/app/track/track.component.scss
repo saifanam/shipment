@@ -6,7 +6,7 @@
     .error-case {
         text-align: center;
         i {
-            font-size: 2em;
+            font-size: $large;
         }
     }
 
@@ -23,7 +23,7 @@
                 align-items: center;
     
                 span {
-                    font-size: 1.4em;
+                    font-size: $medium;
                 }
             }
     
@@ -41,11 +41,12 @@
             }
     
             i {
-                font-size: 2em;
+                font-size: $large;
             }
         }
 
         .success-body {
+            min-height: 500px;
             display: flex;
             justify-content: center;
             padding: 1em;
@@ -61,7 +62,82 @@
                     flex-direction: column;
                     margin-top: 1em;
 
+                    .status-top {
+
+                        .location-type {
+                            font-size: $small;
+                            text-align: center;
+                        }
+
+                        .country {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                border: 1px solid $lightGray;
+                                width: 25px;
+                            }
+
+                            span {
+                                margin-left: 6px;
+                            }
+                        }
+                    }
+
                     .status-bottom {
+                        text-align: center;
+
+                        .departure-info {
+                            text-align: left;
+                            display: inline-block;
+                            margin: 10px 20px 0;
+                        }
+
+                        .shipment-info {
+                            display: flex;
+                            align-items: center;
+                            margin: 3px 0;
+
+                            .shipment-key {
+                                color: $gray;
+                                font-size: $extraSmall;
+                            }
+
+                            .shipment-value {
+                                color: $lightBlack;
+                                font-size: $small;
+                            }
+
+                            i {
+                                width: 30px;
+                            }
+
+                            p {
+                                margin: 0;
+                            }
+                        }
+
+                        p {
+                            margin: 0;
+                        }
+
+                        .line-light {
+                            color: $grayChateau;
+                            font-size: $smallRelative;
+
+                            &.with-margin {
+                                margin-top: 10px;
+                            }
+                        }
+
+                        .line-dark {
+                            color: $doveGray;
+
+                            &.with-margin {
+                                margin: 5px 0 10px;
+                            }
+                        }
+
                         &:hover {
                             .toggle-part {
                                 display: block;
@@ -70,6 +146,12 @@
 
                         .toggle-part {
                             display: none;
+                        }
+
+                        .static-part {
+                            i {
+                                margin-right: 6px;
+                            }
                         }
                     }
                 }
@@ -88,7 +170,7 @@
 
                     .status-dash {
                         margin: 5px 0;
-                        width: 30px;
+                        width: 100px;
                         height: 10px;
                         background-color: $blue;
                     }

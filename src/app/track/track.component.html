@@ -19,12 +19,17 @@
     </div>
 
     <div class="success-body">
-
       <div class="status-wrapper">
-
-        <div class="status-item">
+        <!-- rendering in reverse so that the latest status of interest appears on the left so the user doesn't have to scroll -->
+        <div class="status-item" *ngFor="let item of filteredData.slice().reverse()">
           <div class="status-top">
-            status
+            <p class="location-type">{{item.readings.type === 'departure' ? 'Pick-up location' : 'Drop-off location'}}</p>
+            <div class="country">
+              <img *ngIf="item.location.raw_location.un_country === 'IN'" src="assets/images/in.svg" />
+              <img *ngIf="item.location.raw_location.un_country === 'NL'" src="assets/images/nl.svg" />
+              <img *ngIf="item.location.raw_location.un_country === 'PL'" src="assets/images/pl.svg" />
+              <span>{{item.location.name}}</span>
+            </div>
           </div>
           <div class="status-connector">
             <div class="status-dash"></div>
@@ -32,27 +37,40 @@
             <div class="status-dash"></div>
           </div>
           <div class="status-bottom">
-            <div class="static-part">static</div>
-            <div class="toggle-part">toggle</div>
+            <div *ngIf="item.readings.type === 'departure'" class="departure-info">
+              <div class="shipment-info">
+                <i class="fas fa-ship"></i>
+                <div>
+                  <p class="shipment-key">Carrier</p>
+                  <p class="shipment-value">{{shipmentData.sea_shipments[0].carrier.name}}</p>
+                </div>
+              </div>
+              <div class="shipment-info">
+                <i class="fas fa-file-alt"></i>
+                <div>
+                  <p class="shipment-key">B/L</p>
+                  <p class="shipment-value">{{shipmentData.sea_shipments[0].bill_of_lading_reference}}</p>
+                </div>
+              </div>
+              <div class="shipment-info">
+                <i class="fas fa-edit"></i>
+                <div>
+                  <p class="shipment-key">Booking reference</p>
+                  <p class="shipment-value">{{shipmentData.sea_shipments[0].booking_reference}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="static-part">
+              <p class="line-light with-margin"><i *ngIf="item.readings.type === 'departure'" class="fas fa-play"></i><i *ngIf="item.readings.type === 'arrival'" class="fas fa-stop"></i> {{item.readings.type}} - {{getDateDiff(item.readings.reading)}}</p>
+              <p class="line-dark with-margin">{{item.readings.reading | date: 'MMM d, yy, h:mm a'}}</p>
+            </div>
+            <div class="toggle-part">
+              <p class="line-dark">{{item.readings.event_date | date: 'h:mm a zzzz'}}</p>
+              <p class="line-light">by {{item.readings.source.name}}</p> 
+            </div>
           </div>
           <div class="status-dot"></div>
         </div>
-
-        <div class="status-item">
-          <div class="status-top">
-            status
-          </div>
-          <div class="status-connector">
-            <div class="status-dash"></div>
-            <div class="status-dot"></div>
-            <div class="status-dash"></div>
-          </div>
-          <div class="status-bottom">
-            <div class="static-part">static</div>
-            <div class="toggle-part">toggle</div>
-          </div>
-        </div>
-
       </div>
 
     </div>
