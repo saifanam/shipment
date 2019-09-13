@@ -6,14 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
 ## Highlights
 
 1. shared folder contains utility functions and dummy.json. The dummy json can be replaced / extended with a service in the prod version.
@@ -25,6 +17,16 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 4. The timeline automatically adjusts to the number to status updates. Test by adding / removing entries from the `sea_movements` object in the json.
 
 5. Clicking on `Track Shipment` in the header takes to the tracking page. The route is configured to accept the tracking ID.
+
+6. If the shipment ID is not found, an error page is also thrown. Try giving some random number in the url.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
