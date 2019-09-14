@@ -14,11 +14,21 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 3. The timeline is set to `overflow-x: auto` so it automatically scrolls in the horizontal direction. Works in mobile resolutions as well. Test by resizing browser.
 
-4. The timeline automatically adjusts to the number to status updates. Test by adding / removing entries from the `sea_movements` object in the json.
+![Desktop1](demo-images/desktop1.png)
 
-5. Clicking on `Track Shipment` in the header takes to the tracking page. The route is configured to accept the tracking ID.
+![Mobile](demo-images/mobile.png)
 
-6. If the shipment ID is not found, an error page is also thrown. Try giving some random number in the url.
+4. The status updates on the timeline are rendered reverse so the latest status appears on the left. The user doesn't need to scroll to the right to know the current status.
+
+5. The timeline automatically adjusts to the number to status updates. Test by adding / removing entries from the `sea_movements` object in the json.
+
+![Desktop2](demo-images/desktop2.png)
+
+6. Clicking on `Track Shipment` in the header takes to the tracking page. The route is configured to accept the tracking ID.
+
+7. If the shipment ID is not found, an error page is also thrown. Try giving some random number in the url.
+
+![Error](demo-images/error.png)
 
 ## Code scaffolding
 
